@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lobby</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="lobbyPage" id="container">
+    <ion-button  color="primary" (click)="home.Navigate('map')">map</ion-button>
+    <ion-button (click)="openTeamSettings()">team settings</ion-button>
+  </div>
+  <div *ngIf="teamPage">
+    <ion-text color="primary">
+      <div id="teamPage">
+        <div class="teamNameSection">
+          <h1>Team Name</h1>
+          <h2>
+           <ion-input placeholder="team name" [(ngModel)]="teamName"></ion-input>
+          </h2>
+        </div>
+        <h1>Team Members</h1>
+        <ion-input *ngIf="member1" placeholder="member 1" [(ngModel)]="member1Name"></ion-input>
+        <ion-input *ngIf="member2" placeholder="member 2" [(ngModel)]="member2Name"></ion-input>
+        <ion-input *ngIf="member3" placeholder="member 3" [(ngModel)]="member3Name"></ion-input>
+        <ion-input *ngIf="member4" placeholder="member 4" [(ngModel)]="member4Name"></ion-input>
+        <ion-input *ngIf="member5" placeholder="member 5" [(ngModel)]="member5Name"></ion-input>
+        <ion-button id="bttnAdd" disabled="{{buttonAddMember}}" (click)="addMember()">ADD MEMBER</ion-button>
+        <ion-button id="bttnRemove" disabled="{{buttonRemoveMember}}" (click)="removeMember()">REMOVE MEMBER</ion-button>
+        <div>
+          <ion-button id="bttnBack" (click)="closeTeamSettings()">GO BACK</ion-button>
+        </div>
+      </div>
+    </ion-text>
+  </div>
+</ion-content>
+

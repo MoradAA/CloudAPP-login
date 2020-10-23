@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Map</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <h1>location</h1>
+    lat: {{ lat }}
+    long: {{ lng }}
+    acc: {{accuracy}}
+  </div>
+  <div id="mapRender"></div>
+  <div id="bottomButtons">
+  <ion-button color="primary" (click)="home.Navigate('hints')">hints</ion-button>
+  <ion-button color="primary" (click)="home.Navigate('statistics')">statistics</ion-button>
+  <ion-button color="primary" (click)="home.Navigate('results')">results</ion-button>
+    <ion-button color="primary" (click)="home.Navigate('photo')">photo</ion-button>
+  </div>
+</ion-content>
